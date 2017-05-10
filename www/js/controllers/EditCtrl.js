@@ -16,8 +16,6 @@ angular.module('app.controllers')
 	
     $scope.save = function(cliente) {
 		
-		alert('opa');
-		
 		cliente.id = $state.params.userId;
 		
 		$http.put('https://api-beutyshop.herokuapp.com/clientes/' + $scope.user.id, cliente)
