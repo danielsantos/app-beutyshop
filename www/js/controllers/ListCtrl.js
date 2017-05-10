@@ -3,7 +3,7 @@ angular.module('app.controllers')
 	
 	$scope.users = [];
 	
-	$http.get('http://localhost:8082/clientes')
+	$http.get('https://api-beutyshop.herokuapp.com/clientes')
 	.success(function(lista) {
 		$scope.users = lista;
 	})
@@ -13,7 +13,7 @@ angular.module('app.controllers')
 	
 	$scope.remove = function(userId){
   
-		$http.delete('http://localhost:8082/clientes/' + userId)
+		$http.delete('https://api-beutyshop.herokuapp.com/clientes/' + userId)
 		.success(function(retorno) {
 			console.log(retorno);
 			$window.location.reload(); /*TODO REFATORAR PARA NAO PRECISAR USAR ISSO*/

@@ -48,10 +48,10 @@ angular.module('app.controllers', [])
 	
 	$scope.save = function(cliente){
 		
-		$http.post('http://localhost:8082/clientes', cliente)
+		$http.post('https://api-beutyshop.herokuapp.com/clientes', cliente)
 		.success(function(retorno) {
 			
-			$http.get('http://localhost:8082/clientes')
+			$http.get('https://api-beutyshop.herokuapp.com/clientes')
 			.success(function(lista) {
 				$scope.users = lista;
 			})

@@ -5,7 +5,7 @@ angular.module('app.controllers')
 	//$scope.user = angular.copy(UserStore.get($state.params.userId));
 	$scope.user = {};
 	
-	$http.get('http://localhost:8082/clientes/' + $state.params.userId)
+	$http.get('https://api-beutyshop.herokuapp.com/clientes/' + $state.params.userId)
 	.success(function(usuario) {
 		$scope.cliente = usuario;
 	})
@@ -20,10 +20,10 @@ angular.module('app.controllers')
 		
 		cliente.id = $state.params.userId;
 		
-		$http.put('http://localhost:8082/clientes/' + $scope.user.id, cliente)
+		$http.put('https://api-beutyshop.herokuapp.com/clientes/' + $scope.user.id, cliente)
 		.success(function(retorno) {
 			
-			$http.get('http://localhost:8082/clientes')
+			$http.get('https://api-beutyshop.herokuapp.com/clientes')
 			.success(function(lista) {
 				$scope.users = lista;
 			})
