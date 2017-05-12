@@ -50,15 +50,35 @@ angular.module('app.routes', [])
 	  }
   })
   
-  .state('menu.list', {
-      url: '/list',
+  .state('menu.addServico', {
+      url: '/addServico',
 	  views : {
 			'side-menu21' : {
-				templateUrl: 'templates/list.html'//,
-				//controller: 'ListarCtrl'
+				templateUrl: 'templates/editServico.html',
+				controller: 'mainCtrl'
+			}
+	  }
+  })  
+  
+  .state('menu.listClientes', {
+      url: '/listClientes',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/listClientes.html',
+				controller: 'ListCtrl'
 			}
 	  }
   })
+  
+  .state('menu.listServicos', {
+      url: '/listServicos',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/listServicos.html',
+				controller: 'ListServicosCtrl'
+			}
+	  }
+  })  
   
   .state('menu.edit', {
       url: '/edit/:userId',
@@ -69,6 +89,16 @@ angular.module('app.routes', [])
 			}
 	  }
     })  
+	
+  .state('menu.editServicos', {
+      url: '/editServicos/:userId',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/editServicos.html',
+				controller: 'EditServicosCtrl'
+			}
+	  }
+    }) 	
   
   .state('menu.dadosCadastrais', {
     url: '/dadosCadastrais',
@@ -80,6 +110,6 @@ angular.module('app.routes', [])
     }
   });
 
-  $urlRouterProvider.otherwise('/side-menu21/list')
+  $urlRouterProvider.otherwise('/side-menu21/listClientes')
 
 });
