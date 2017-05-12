@@ -3,113 +3,85 @@ angular.module('app.routes', [])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-    
-	.state('menu.jogosDisponVeis', {
-			url: '/page1',
-			views: {
-				'side-menu21': {
-					templateUrl: 'templates/cadastrar.html',
-					controller: 'mainCtrl'
-			}
-		}
-	})
-
-  .state('menu.jogos', {
-    url: '/jogos',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/excluir.html',
-        controller: 'mainCtrl'
-      }
-    }
-  })
 
   .state('menu', {
     url: '/side-menu21',
     templateUrl: 'templates/menu.html',
     controller: 'mainCtrl'
   })
-
-  .state('menu.meusJogos', {
-    url: '/meusJogos',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/atualizar.html',
-        controller: 'mainCtrl'
-      }
-    }
+  
+  .state('menu.inicio', {
+      url: '/inicio',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/inicio.html',
+				controller: 'mainCtrl'
+			}
+	  }
   })
     
-  .state('menu.add', {
-      url: '/add',
-	  views : {
-			'side-menu21' : {
-				templateUrl: 'templates/edit.html',
-				controller: 'mainCtrl'
-			}
-	  }
-  })
-  
-  .state('menu.addServico', {
-      url: '/addServico',
-	  views : {
-			'side-menu21' : {
-				templateUrl: 'templates/editServico.html',
-				controller: 'mainCtrl'
-			}
-	  }
-  })  
-  
+  // ############ CLIENTES ####################################################
   .state('menu.listClientes', {
       url: '/listClientes',
 	  views : {
 			'side-menu21' : {
-				templateUrl: 'templates/listClientes.html',
+				templateUrl: 'templates/clientes/list.html',
 				controller: 'ListCtrl'
 			}
 	  }
   })
   
-  .state('menu.listServicos', {
-      url: '/listServicos',
+  .state('menu.add', {
+      url: '/add',
 	  views : {
 			'side-menu21' : {
-				templateUrl: 'templates/listServicos.html',
-				controller: 'ListServicosCtrl'
+				templateUrl: 'templates/clientes/edit.html',
+				controller: 'mainCtrl'
 			}
 	  }
-  })  
+  })
   
   .state('menu.edit', {
       url: '/edit/:userId',
 	  views : {
 			'side-menu21' : {
-				templateUrl: 'templates/edit.html',
+				templateUrl: 'templates/clientes/edit.html',
 				controller: 'EditCtrl'
 			}
 	  }
     })  
+  
+  // ############ SERVICOS ####################################################
+  .state('menu.listServicos', {
+      url: '/listServicos',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/servicos/list.html',
+				controller: 'ListServicosCtrl'
+			}
+	  }
+  })  
+  
+  .state('menu.addServico', {
+      url: '/addServico',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/servicos/edit.html',
+				controller: 'mainCtrl'
+			}
+	  }
+  })  
 	
   .state('menu.editServicos', {
       url: '/editServicos/:userId',
 	  views : {
 			'side-menu21' : {
-				templateUrl: 'templates/editServicos.html',
+				templateUrl: 'templates/servicos/edit.html',
 				controller: 'EditServicosCtrl'
 			}
 	  }
     }) 	
-  
-  .state('menu.dadosCadastrais', {
-    url: '/dadosCadastrais',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/listar.html',
-        controller: 'mainCtrl'
-      }
-    }
-  });
 
-  $urlRouterProvider.otherwise('/side-menu21/listClientes')
+  $urlRouterProvider.otherwise('/side-menu21/inicio')
 
 });
