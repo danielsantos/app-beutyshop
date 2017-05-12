@@ -1,4 +1,4 @@
-<ion-view view-title="Selecione os Serviços">
+<ion-view view-title="Selecione os Serviços" ng-controller="OutroCtrl">
 	
 	<ion-content>
 		
@@ -6,12 +6,19 @@
 	
 		<ion-list show-reorder="reordering">
 		
-			<ion-toggle ng-repeat="servico in servicos" ng-model="item.checked" ng-checked="item.checked">
+			<ion-toggle ng-repeat="servico in servicos" ng-model="servico.checked" ng-checked="servico.checked">
 				{{ servico.nome }}
 			</ion-toggle>
 			
 		</ion-list>
 	
 	</ion-content>
+	
+	<div class="bar bar-footer bar-stable">
+		<div class="row">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a ng-click="agoravai(cliente.id, servicos)" class="col button button-balanced ion-person-add"> Agendar Horário</a>
+		</div>
+	</div>	
 	
 </ion-view>

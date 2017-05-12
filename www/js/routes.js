@@ -112,6 +112,16 @@ angular.module('app.routes', [])
 			}
 	  }
     }) 	
+	
+  .state('menu.teste', {
+      url: '/agenda/:clienteId/:servicos',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/servicos/edit.html',
+				controller: 'OutroCtrl'
+			}
+	  }
+    }) 	
 
   $urlRouterProvider.otherwise('/side-menu21/inicio')
 
