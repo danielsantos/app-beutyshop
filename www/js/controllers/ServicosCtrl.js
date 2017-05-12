@@ -1,5 +1,5 @@
 angular.module('app.controllers')
-.controller('ListServicosCtrl', function($scope, $http, $window) {
+.controller('ServicosCtrl', function($scope, $state, $http, $window) {
 	
 	$scope.users = [];
 	
@@ -11,19 +11,17 @@ angular.module('app.controllers')
 		console.log(erro);
 	});	
 	
-	/*
 	$scope.remove = function(userId){
   
 		$http.delete('https://api-beutyshop.herokuapp.com/servicos/' + userId)
 		.success(function(retorno) {
 			console.log(retorno);
-			$window.location.reload(); // TODO REFATORAR PARA NAO PRECISAR USAR ISSO
+			$window.location.reload(); /*TODO REFATORAR PARA NAO PRECISAR USAR ISSO*/
 		})
 		.error(function(erro) {
 			console.log(erro);
 		});
 	  
 	}
-	*/
 	
 });

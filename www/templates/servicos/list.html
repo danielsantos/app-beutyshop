@@ -1,16 +1,14 @@
-<ion-view view-title="Lista de Serviços" ng-controller="ListServicosCtrl">
+<ion-view view-title="Lista de Serviços" ng-controller="ServicosCtrl">
   <ion-content>
     <ion-list show-reorder="reordering">
-      <ion-item class="item-remove-animate item-icon-right" ng-repeat="user in users track by user.id">
+      <ion-item class="item-remove-animate item-icon-right" href="#/side-menu21/editServicos/{{user.id}}" ng-repeat="user in users track by user.id">
 		
 		<i class="icon icon-left ion-{{user.gender}}"></i>
         <h2 class="ion-{{user.gender}}"> {{user.nome}}</h2>
         <p> {{user.nationality}}</p>
 
-		<a href="#/side-menu21/editServicos/{{user.id}}" class="button button-light icon ion-edit"></a>
+		<a ng-click="remove(user.id)" class="button button-light icon ion-trash-b"></a>
 		
-		<button ng-click="remove(user.id)" class="ion-trash-b" ></button>
-
         <ion-reorder-button class="ion-drag" on-reorder="move(user, $fromIndex, $toIndex)"></ion-reorder-button>
 
 		<!--TODO O BOTAO ABAIXO NAO ESTA SENDO MOSTRADO-->

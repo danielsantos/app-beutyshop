@@ -57,17 +57,17 @@ angular.module('app.routes', [])
 	  views : {
 			'side-menu21' : {
 				templateUrl: 'templates/servicos/list.html',
-				controller: 'ListServicosCtrl'
+				controller: 'ServicosCtrl'
 			}
 	  }
   })  
   
-  .state('menu.addServico', {
+  .state('menu.addServicos', {
       url: '/addServico',
 	  views : {
 			'side-menu21' : {
 				templateUrl: 'templates/servicos/edit.html',
-				controller: 'mainCtrl'
+				controller: 'ServicosCtrl'
 			}
 	  }
   })  
