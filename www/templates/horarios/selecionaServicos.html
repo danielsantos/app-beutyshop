@@ -1,0 +1,17 @@
+<ion-view view-title="Selecione os Serviços">
+	
+	<ion-content>
+		
+		Cliente: <h3>{{cliente.nome}}</h3>
+	
+		<ion-list show-reorder="reordering">
+		
+			<ion-toggle ng-repeat="servico in servicos" ng-model="item.checked" ng-checked="item.checked">
+				{{ servico.nome }}
+			</ion-toggle>
+			
+		</ion-list>
+	
+	</ion-content>
+	
+</ion-view>

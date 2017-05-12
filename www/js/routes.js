@@ -81,6 +81,37 @@ angular.module('app.routes', [])
 			}
 	  }
     }) 	
+	
+  // ############ HORARIOS ####################################################
+  .state('menu.listHorarios', {
+      url: '/listHorarios',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/horarios/list.html',
+				controller: 'HorariosCtrl'
+			}
+	  }
+  }) 
+  
+  .state('menu.addHorario', {
+      url: '/addHorario',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/horarios/edit.html',
+				controller: 'HorariosCtrl'
+			}
+	  }
+  })  
+  
+  .state('menu.selecionaCliente', {
+      url: '/selecionaCliente/:clienteId',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/horarios/selecionaServicos.html',
+				controller: 'NovoCtrl'
+			}
+	  }
+    }) 	
 
   $urlRouterProvider.otherwise('/side-menu21/inicio')
 
