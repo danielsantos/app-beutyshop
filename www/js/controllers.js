@@ -64,11 +64,21 @@ angular.module('app.controllers', [])
 	$scope.saveUsuario = function(usuario) {
 		
 		DatabaseValues.setup();
-		DatabaseValues.bancoDeDados.transaction(function(transacao) {
+		
+		if (usuario.id) {
+
+			DatabaseValues.bancoDeDados.transaction(function(transacao) {
+				transacao.executeSql('UPDATE usuario SET nome = ? WHERE id = ?', [usuario.nome, usuario.id]);
+			});
+		
+		} else {
 			
-			transacao.executeSql('INSERT INTO usuario (nome) VALUES (?)', [usuario.nome]);
-			
-		});
+			DatabaseValues.bancoDeDados.transaction(function(transacao) {
+				transacao.executeSql('INSERT INTO usuario (nome) VALUES (?)', [usuario.nome]);
+			});
+		
+		}
+		
 	  
     };	
 

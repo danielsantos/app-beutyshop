@@ -27,7 +27,7 @@ angular.module('app.routes', [])
 	  views : {
 			'side-menu21' : {
 				templateUrl: 'templates/usuarios/list.html',
-				controller: 'mainCtrl'
+				controller: 'ListUsuariosCtrl'
 			}
 	  }
   })
@@ -58,8 +58,8 @@ angular.module('app.routes', [])
       url: '/listClientes',
 	  views : {
 			'side-menu21' : {
-				templateUrl: 'templates/clientes/list.html',
-				controller: 'ListCtrl'
+				templateUrl: 'templates/clientes/list.html'//,
+				//controller: 'ListCtrl'
 			}
 	  }
   })

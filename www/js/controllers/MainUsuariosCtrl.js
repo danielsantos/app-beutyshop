@@ -1,5 +1,5 @@
-angular.module('app.controllers')
-.controller('ListUsuariosCtrl', function($scope, $http, $window, DatabaseValues, $state) {
+angular.module('app.controllers', [])
+.controller('MainUsuariosCtrl', function ($scope, $stateParams, $http, $window, $state, DatabaseValues) {
 	
 	$scope.usuarios = [];
 
@@ -13,19 +13,17 @@ angular.module('app.controllers')
 			}
 		
 		});
-	});	
+	});
 	
-	$scope.removeUsuario = function(usuarioId) {
+	$scope.saveUsuario = function(usuario) {
 		
 		DatabaseValues.setup();
 		DatabaseValues.bancoDeDados.transaction(function(transacao) {
-			transacao.executeSql('DELETE FROM usuario WHERE id = ?', [usuarioId]);
+			
+			transacao.executeSql('INSERT INTO usuario (nome) VALUES (?)', [usuario.nome]);
+			
 		});
 	  
-		// RELOAD AQUI
-		
-		$state.go($state.current, {}, {reload: true}); 
-	  
-    };
-	
+    };	
+
 });

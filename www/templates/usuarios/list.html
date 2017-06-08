@@ -1,4 +1,4 @@
-<ion-view cache-view="false" view-title="Lista de Usuários" ng-controller="ListCtrl">
+<ion-view cache-view="false" view-title="Lista de Usuários" ng-controller="ListUsuariosCtrl">
   <ion-content>
     <ion-list show-reorder="reordering">
       <ion-item class="item-remove-animate item-icon-right" href="#/side-menu21/editUsuarios/{{user.id}}" ng-repeat="user in usuarios track by user.id">
@@ -6,12 +6,12 @@
 		<i class="icon icon-left ion-{{user.gender}}"></i>
         <h2 class="ion-{{user.gender}}"> {{user.nome}}</h2>
 
-		<a ng-click="remove(user.id)" class="button button-light icon ion-trash-b"></a>
+		<a ng-click="removeUsuario(user.id)" class="button button-light icon ion-trash-b"></a>
 
         <ion-reorder-button class="ion-drag" on-reorder="move(user, $fromIndex, $toIndex)"></ion-reorder-button>
 
 		<!--TODO O BOTAO ABAIXO NAO ESTA SENDO MOSTRADO-->
-        <ion-option-button class="button-assertive icon-left ion-trash-b" ng-click="remove(user.id)">Delete</ion-option-button>
+        <ion-option-button class="button-assertive icon-left ion-trash-b" ng-click="removeUsuario(user.id)">Delete</ion-option-button>
 		
 		
       </ion-item>
