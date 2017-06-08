@@ -1,11 +1,10 @@
 <ion-view cache-view="false" view-title="Lista de Usuários" ng-controller="ListCtrl">
   <ion-content>
     <ion-list show-reorder="reordering">
-      <ion-item class="item-remove-animate item-icon-right" href="#/side-menu21/edit/{{user.id}}" ng-repeat="user in usuarios track by user.id">
+      <ion-item class="item-remove-animate item-icon-right" href="#/side-menu21/editUsuarios/{{user.id}}" ng-repeat="user in usuarios track by user.id">
 		
 		<i class="icon icon-left ion-{{user.gender}}"></i>
         <h2 class="ion-{{user.gender}}"> {{user.nome}}</h2>
-        <p> {{user.nationality}}</p>
 
 		<a ng-click="remove(user.id)" class="button button-light icon ion-trash-b"></a>
 
