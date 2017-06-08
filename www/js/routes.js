@@ -19,6 +19,39 @@ angular.module('app.routes', [])
 			}
 	  }
   })
+  
+
+  // ############ USUARIOS ####################################################
+  .state('menu.listUsuarios', {
+      url: '/listUsuarios',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/usuarios/list.html',
+				controller: 'mainCtrl'
+			}
+	  }
+  })
+  
+  .state('menu.addUsuarios', {
+      url: '/addUsuarios',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/usuarios/edit.html',
+				controller: 'mainCtrl'
+			}
+	  }
+  })
+  
+  .state('menu.editUsuarios', {
+      url: '/editUsuarios/:userId',
+	  views : {
+			'side-menu21' : {
+				templateUrl: 'templates/usuarios/edit.html',
+				controller: 'EditCtrl'
+			}
+	  }
+    })  
+  
     
   // ############ CLIENTES ####################################################
   .state('menu.listClientes', {
