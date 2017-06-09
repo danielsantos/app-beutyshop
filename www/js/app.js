@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services',])
+angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services', 'ionic-datepicker'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
   
@@ -29,7 +29,10 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 	
 	DatabaseValues.setup();
 	DatabaseValues.bancoDeDados.transaction(function (transacao) {
-		transacao.executeSql('CREATE TABLE IF NOT EXISTS usuario (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nome VARCHAR(300));', [])		
+		//transacao.executeSql('DROP TABLE  usuario', [])
+		transacao.executeSql('CREATE TABLE IF NOT EXISTS usuario (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ' + 
+																' nome VARCHAR(300), ' +
+		      										            ' dataNascimento DATE);', [])		
 	});		
 	
   });

@@ -9,6 +9,7 @@ angular.module('app.controllers')
 		transacao.executeSql('SELECT * FROM usuario WHERE id = ?', [$state.params.userId], function(transacao, resultados) {
 
 			$scope.usuario = resultados.rows[0];
+			$scope.dataSelecionada = resultados.rows[0].dataNascimento;
 		
 		});
 	});
